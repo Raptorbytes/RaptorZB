@@ -18,7 +18,7 @@
 
 *To learn python stuff*
 
-### Why am I writing this?
+### Why am I writing this README?
 
 *Because it looks cool and makes me feel like I'm being productive*
 
