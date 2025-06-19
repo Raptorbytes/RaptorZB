@@ -1,4 +1,4 @@
-# PathOwOgen - Prototype malware, not designed for use.
+# PathOwOgen - Silly malware.
 ***Version 0.1.0D***
 **CLOSED SOURCE DIST *ONLY***
 
