@@ -3,6 +3,11 @@
 
 **CLOSED SOURCE DIST *ONLY***
 
+### Current things to add:
+
+* Custom payload name and contents
+* 
+
 ### Programming Language(s):
 
 [![skills](https://skillicons.dev/icons?i=python)](https://skillicons.dev)
@@ -16,6 +21,8 @@
 
 # Build instructions:
 
-**Nothing yet :3**
+**Run the included .py file and follow instructions. It should leave you with a <insert name you gave>.zip file and thats that.
+
+# DO NOT UNZIP THE FILE UNLESS YOU ARE ALRIGHT WITH THE COMPLETE CONSEQUENCES OF THE SIZE OF THE ZIP YOU CREATED!!
 
 
