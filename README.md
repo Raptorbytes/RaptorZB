@@ -6,7 +6,6 @@
 ### Programming Language:
 
 [![skills](https://skillicons.dev/icons?i=python)](https://skillicons.dev)
-
 ### Purpose: 
 
 *To learn python OS stuff*
