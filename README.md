@@ -1,4 +1,4 @@
-# PathOwOgenZB - Silly zip bomb factory.
+# PathOwOgenZB - Silly zip bomb tool.
 ***Version 0.1.0D***
 
 **CLOSED SOURCE DIST *ONLY***
