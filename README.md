@@ -1,5 +1,6 @@
 # PathOwOgen - Prototype malware, not designed for use.
-## Version 0.1.0D
+***Version 0.1.0D***
+**CLOSED SOURCE DIST *ONLY***
 
 *Programming Language: Python (obv)*
 
@@ -8,4 +9,3 @@
 *Why am I writing this: Because it looks cool and makes me feel like I'm being productive*
 
 
-**CURRENTLY LOCKED TO CLOSED SOURCE DIST**
