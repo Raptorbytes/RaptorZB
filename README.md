@@ -3,10 +3,16 @@
 
 **CLOSED SOURCE DIST *ONLY***
 
-*Programming Language: Python (obv)*
+### Programming Language:
 
-*Purpose: To learn python OS stuff*
+[![skills](https://skillicons.dev/icons?i=python)](https://skillicons.dev)
 
-*Why am I writing this: Because it looks cool and makes me feel like I'm being productive*
+### Purpose: 
+
+*To learn python OS stuff*
+
+### Why am I writing this?
+
+*Because it looks cool and makes me feel like I'm being productive*
 
 
