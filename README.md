@@ -1,5 +1,5 @@
 # PathOwOgenZB - Silly zip bomb tool.
-***Version 0.1.0D***
+***Version 0.1.1P***
 
 **CLOSED SOURCE DIST *ONLY***
 
