@@ -1,4 +1,4 @@
-# PathOwOgen - Silly malware.
+# PathOwOgen - Silly zip bomb factory.
 ***Version 0.1.0D***
 
 **CLOSED SOURCE DIST *ONLY***
@@ -8,7 +8,7 @@
 [![skills](https://skillicons.dev/icons?i=python)](https://skillicons.dev)
 ### Purpose: 
 
-*To learn python OS stuff*
+*To learn python stuff*
 
 ### Why am I writing this?
 
@@ -16,7 +16,6 @@
 
 # Build instructions:
 
-## Step one:
 **Nothing yet :3**
 
 
