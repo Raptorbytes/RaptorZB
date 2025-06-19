@@ -3,7 +3,7 @@
 
 **CLOSED SOURCE DIST *ONLY***
 
-### Programming Language:
+### Programming Language(s):
 
 [![skills](https://skillicons.dev/icons?i=python)](https://skillicons.dev)
 ### Purpose: 
@@ -13,5 +13,10 @@
 ### Why am I writing this?
 
 *Because it looks cool and makes me feel like I'm being productive*
+
+# Build instructions:
+
+## Step one:
+**Nothing yet :3**
 
 
