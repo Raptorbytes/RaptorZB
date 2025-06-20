@@ -1,15 +1,13 @@
 # PathOwOgenZB - Silly zip bomb tool.
-***Version 0.1.1P***
+***Version 0.1.2P***
 
 **CLOSED SOURCE DIST *ONLY***
 
 ### Current things to add:
 
-* Custom payload name and contents
-* Image payload support(??)
 * Bomb final zip format selection (Example: .7z, .rar, .tar, etc)
 * Open-source it?? (Probably)
-* Make it in a better and faster language like Rust or C/C++
+* **Make it in a better and faster language like Rust or C/CPP**
 
 ### Programming Language(s):
 
