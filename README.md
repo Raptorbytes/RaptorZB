@@ -1,17 +1,15 @@
 # PathOwOgenZB - Silly zip bomb tool.
 ***Version 0.1.2P***
 
-**CLOSED SOURCE DIST *ONLY***
-
 ### Current things to add:
 
-* Open-source it?? (Probably)
 * **Make it in a better and faster language like Rust or C/CPP**
 * Final size in GiB, TiB
 
 ### Programming Language(s):
 
 [![skills](https://skillicons.dev/icons?i=python)](https://skillicons.dev)
+
 ### Purpose: 
 
 *To learn python stuff*

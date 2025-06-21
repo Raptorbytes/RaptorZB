@@ -1,4 +1,4 @@
-# This is CLOSED SOURCE software, written by Arco Nightshade.
+# This is written by Arco Nightshade.
 
 import os
 import zipfile
@@ -166,3 +166,7 @@ elif zip_mode == "3":
     create_payload()
     payload_path = os.path.abspath(payload_name)
     create_tar_symlink_bomb()
+
+
+else:
+    print("Invalid mode")
