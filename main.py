@@ -7,7 +7,7 @@ import shutil
 from pathlib import Path
 
 # Welcoming stuff and cwd finding
-print("Welcome to pathOwOgenZB by Arco!")
+print("Welcome to RaptorZB by Arco!")
 print("Current working directory:", os.getcwd())
 
 def print_final_size(file_path, extracted_mb=None):
@@ -72,7 +72,7 @@ if zip_mode == "1":
                 print(f"Added file {i}")
             print()
             print(f"Added {i + 1} files total")
-        print(f"PathOwOgenZB Zip created: {zip_name} with {copies} files.")
+        print(f"RaptorZB Zip created: {zip_name} with {copies} files.")
         extracted_size_mb = size_mb * copies
         print_final_size(zip_name, extracted_size_mb)
 
