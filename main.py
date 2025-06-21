@@ -14,13 +14,13 @@ def print_final_size(file_path, extracted_mb=None):
     if os.path.exists(file_path):
         size_bytes = os.path.getsize(file_path)
         size_gb = size_bytes / (1024 ** 3)
-        print(f"\n📦 Final compressed size: {size_gb:.2f} GB ({size_bytes:,} bytes)")
+        print(f"\nFinal compressed size: {size_gb:.2f} GB ({size_bytes:,} bytes)")
     else:
         print(f"[!] File not found: {file_path}")
 
     if extracted_mb is not None:
         extracted_gb = extracted_mb / 1024
-        print(f"💥 Estimated extracted size: {extracted_gb:.2f} GB ({extracted_mb:,} MB)")
+        print(f"Estimated extracted size: {extracted_gb:.2f} GB ({extracted_mb:,} MB)")
 
 # Zip mode selection
 while True:
