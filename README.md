@@ -1,4 +1,4 @@
-# PathOwOgenZB - Silly zip bomb tool.
+# RaptorZB - Silly zip bomb tool.
 ***Version 0.1.2P***
 
 ### Current things to add:
