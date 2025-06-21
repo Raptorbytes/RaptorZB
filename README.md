@@ -4,7 +4,6 @@
 ### Current things to add:
 
 * **Make it in a better and faster language like Rust or C/CPP**
-* Final size in GiB, TiB
 
 ### Programming Language(s):
 
