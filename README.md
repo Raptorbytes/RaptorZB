@@ -8,7 +8,6 @@
 * Bomb final zip format selection (Example: .7z, .rar, .tar, etc)
 * Open-source it?? (Probably)
 * **Make it in a better and faster language like Rust or C/CPP**
-* Add a mode selection for recursive zips and just spam files.
 * Final size in GiB, TiB
 
 ### Programming Language(s):
